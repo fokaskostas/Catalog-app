@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Edit item{% endblock %}
+
+{% block jumbotron_content %}
+<html>
+  <body>
+	  <div class="text-center">
+	  	<h1>Edit item {{ item_name }}</h1>
+			<form action="{{ url_for('editItem', category_name=category_name, item_name=item_name) }}" method = 'POST'>
+				<p>Title:</p>
+					<input type='text' size='30' name='name' placeholder='{{ item_name }}'>
+				<p>Description:</p>
+					<input type ='text' size='30' name='description' placeholder = ''>
+				<p>Category:</p>
+					<input type ='text' size='30' name='category' placeholder = '{{ category_name }}'></br></br>
+					<input type='submit' value='Edit'>
+					<a href="{{ url_for('showItems', category_name=category_name) }}">Cancel</a>
+			</form>
+	  </div>
+  </body>
+</html>
+{% endblock %}

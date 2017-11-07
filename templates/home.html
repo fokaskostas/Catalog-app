@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block head_title %}Categories{% endblock %}
+
+{% block jumbotron_content %}
+
+<div class="text-center">
+	<div>
+      <i class="fa fa-database fa-5x" aria-hidden="true"></i></br></br>
+      <h1>CATEGORIES</h1>
+      <a href="{{ url_for('newCategory')}}">Create New Category</a></br></br>
+    </div>
+    <div>
+      {% for category in categories %}
+      <a class="btn btn-lg btn-primary" href="{{ url_for('showItems', category_name = category.name) }}" role="button">{{ category.name }} &raquo;</a></br>
+      <a href="{{ url_for('editCategory', category_name=category.name) }}">Edit</a>
+      <a href="{{ url_for('deleteCategory', category_name = category.name) }}">Delete</a></br></br>
+      {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
+

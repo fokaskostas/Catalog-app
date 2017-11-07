@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block head_title %}{{ item.name }}{% endblock %}
+
+{% block jumbotron_content %}
+<html>
+  <body>
+	  <div class="text-center">
+		<h1>{{ item.name }}</h1>
+        Description: {{ item.description }}</br>
+	  </div>
+  </body>
+</html>
+{% endblock %}

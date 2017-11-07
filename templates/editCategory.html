@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Edit Category {{category.name}}{% endblock %}
+
+{% block jumbotron_content %}
+<html>
+	<body>
+		<div class="text-center">
+			<i class="fa fa-wrench fa-3x" aria-hidden="true"></i>
+			<h1>Edit category {{category.name}}</h1>
+	        <form action="{{ url_for('editCategory', category_name=category.name) }}" method = 'POST'>
+		    <p>Name:</p>
+			<input type='text' size='30' name='name' placeholder='{{category.name}}'>
+		    <input type='submit' value='Edit'>
+		    <a href="{{ url_for('showCategories') }} ">Cancel</a>
+		    </form>
+		</div>
+	</body>
+</html>
+{% endblock %}
+
+
+

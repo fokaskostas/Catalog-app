@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head_title %}New Category{% endblock %}
+
+{% block jumbotron_content %}
+<html>
+	<body>
+		<div class="text-center">
+			<i class="fa fa-cogs fa-3x" aria-hidden="true"></i>
+		  <h1>New Category</h1>
+		  <form action="{{ url_for('newCategory')}}" method = 'POST'>
+		    <p>Name:</p>
+		    <input type='text' size='30' name='name'>
+		    <input type='submit' value='Create'>
+		    <a href="{{ url_for('showCategories') }} ">Cancel</a>
+		  </form>
+		</div>
+	</body>
+</html>
+{% endblock %}

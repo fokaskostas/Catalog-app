@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head_title %}{{ category.name }}{% endblock %}
+
+{% block jumbotron_content %}
+<html>
+  <body>
+	  <div class="text-center">
+	  	<i class="fa fa-archive fa-4x" aria-hidden="true"></i>
+		<h1>{{ category.name }} items </h1>
+          <a href="{{ url_for('newItem',category_name=category.name) }}">Add Item</a></br></br>
+		  {% for item in items %}
+		  <a href="{{ url_for('showItemDescription', category_name=category.name, item_name=item.name) }}"><h3>{{ item.name }}</h3></a>
+		  <a href="{{ url_for('editItem', category_name=category.name, item_name=item.name) }}">Edit</a>
+		  <a href="{{ url_for('deleteItem', category_name=category.name, item_name=item.name) }}">Delete</a></br></br>
+		  {% endfor %}
+	  </div>
+  </body>
+</html>
+{% endblock %}
+
+
+

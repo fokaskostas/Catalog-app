@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Welcome{% endblock %}
+
+{% block jumbotron_content %}
+<div class="container">
+  <div class="row">
+
+	  <div class="col-sm-6">
+	    <h1>Item Catalog</h1>
+	    <p class="lead">This is a website that allows you to create a list with your favorite items. Add new items, edit or delete.</p>
+	    <a class="btn btn-lg btn-primary" href="{{ url_for('showCategories') }}" role="button">Browse Categories &raquo;</a>
+	  </div>
+
+	  <div class="col-sm-6" >
+	  	<img src="{{ url_for('static', filename='images/1.jpg') }}" height='300' width='500' alt="Main Image" class="img-responsive" ></br>
+	  </div>
+
+  </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+  <div class='col-sm-3'>
+    <p class="lead">Built with Flask &amp; Bootstrap</p>
+  </div>
+{% endblock %}
