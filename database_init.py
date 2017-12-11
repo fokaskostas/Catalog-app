@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, User, Category, Item
@@ -71,7 +73,7 @@ item6 = Item(name="Hockey shirt", description="Wear it when playing hockey", cat
 session.add(item6)
 session.commit()
 
-print "added items!"
+print ("added items!")
 
 
 
